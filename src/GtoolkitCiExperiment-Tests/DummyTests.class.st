@@ -1,11 +1,11 @@
 Class {
-	#name : #DymmyTests,
+	#name : #DummyTests,
 	#superclass : #TestCase,
 	#category : #'GtoolkitCiExperiment-Tests'
 }
 
 { #category : #accessing }
-DymmyTests >> testAnswer [
+DummyTests >> testAnswer [
     | dummy |
 	dummy := Dummy new.
 	self assert: dummy answer equals: 42
