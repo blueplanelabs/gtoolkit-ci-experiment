@@ -8,7 +8,11 @@ Class {
 BaselineOfGtoolkitCiExperiment >> baseline: spec [
 	<baseline>
 		^ spec for: #common do: [
-			spec package: 'GtoolkitCiExperiment'.
-			spec package: 'GtoolkitCiExperiment-Tests'.
-		]
+			spec package: 'GtoolkitCiExperiment';
+				 package: 'GtoolkitCiExperiment-Tests'.
+			spec 
+			    group: 'Core' with: #('GtoolkitCiExperiment');
+			    group: 'Tests' with: #('GtoolkitCiExperiment-Tests');
+			    group: 'default' with: #('Core' 'Tests') ]
+		
 ]
