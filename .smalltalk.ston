@@ -11,4 +11,5 @@ SmalltalkCISpec {
       #packages : [ 'GtoolkitCiExperiment.*' ],
       #format : #coveralls
     }
+  }
 }
