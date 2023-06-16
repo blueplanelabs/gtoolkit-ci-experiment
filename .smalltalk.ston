@@ -9,7 +9,7 @@ SmalltalkCISpec {
   #testing : {
     #coverage : {
       #packages : [ 'GtoolkitCiExperiment.*' ],
-      #format : #coveralls
+      #format : #lcov
     }
   }
 }
