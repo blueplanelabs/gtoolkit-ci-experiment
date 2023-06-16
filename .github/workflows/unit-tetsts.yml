@@ -40,3 +40,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         timeout-minutes: 15
+     
+      # Upload coverage data
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          name: ${{matrix.os}}-${{matrix.smalltalk}}
+          token: ${{ secrets.CODECOV_TOKEN }}
