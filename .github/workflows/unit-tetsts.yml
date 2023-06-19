@@ -38,6 +38,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         timeout-minutes: 15
+        
+      # Load knowledge database
+      - name: Load knowledge database
+        run: ${SMALLTALK_CI_VM} /home/runner/.smalltalkCI/_builds/TravisCI.image st --save /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
 
       # Upload the Pharo image artifact
       - name: Upload Pharo image
