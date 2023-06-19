@@ -4,6 +4,21 @@ Class {
 	#category : #BaselineOfGtoolkitCiExperiment
 }
 
+{ #category : #accessing }
+BaselineOfGtoolkitCiExperiment class >> loadKnowledge [
+	IceRepository registry  
+		detect: [ :aRepository |
+			aRepository name = 'gtoolkit-ci-experiment' ]
+		ifFound: [ :aRepository | 
+			| defaultDatabase currentProperties |
+			defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
+			currentProperties := defaultDatabase properties.
+			currentProperties addRegisteredDirectory: aRepository repositoryDirectory / 'lepiter'.
+			defaultDatabase reload ]
+		ifNone: [
+			self inform: 'Repository gtoolkit-ci-experiment not found.' ]
+]
+
 { #category : #baseline }
 BaselineOfGtoolkitCiExperiment >> baseline: spec [
 	<baseline>
