@@ -6,7 +6,7 @@ SmalltalkCISpec {
       #platforms : [ #pharo ]
     }
   ],
-  #postLoading: [  1 ],
+  #postLoading: [ "ci/scripts/loadKnowledge.st"  ],
   #testing : {
     #coverage : {
       #packages : [ 'GtoolkitCiExperiment' ],
