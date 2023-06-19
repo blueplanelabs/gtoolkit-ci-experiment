@@ -43,8 +43,9 @@ jobs:
       - name: Upload Pharo image
         uses: actions/upload-artifact@v3
         with:
-          name: PharoExperiment.image
+          name: PharoCIExperiment.image
           path: /home/runner/.smalltalkCI/_builds/TravisCI.image
+          retention-days: 14 days
      
       # Upload coverage data
       - name: Upload coverage reports to Codecov
