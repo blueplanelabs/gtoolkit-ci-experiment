@@ -34,7 +34,7 @@ jobs:
           
       # Loads Smalltalk image with project code and run the tests
       - name: Load Image and Run Tests
-        run: smalltalkci -s ${{ matrix.smalltalk }}
+        run: smalltalkci -v -s ${{ matrix.smalltalk }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         timeout-minutes: 15
