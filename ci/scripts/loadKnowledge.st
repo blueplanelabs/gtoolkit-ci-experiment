@@ -1,10 +1,3 @@
-Transcript show: 'Loading GtoolkitCiExperiment project...'; cr.
-
-Metacello new
-	repository: 'github://blueplanelabs/gtoolkit-ci-experiment:main/src';
-	baseline: 'GtoolkitCiExperiment';
-	load.
-
 Transcript show: 'Loading knowledge database...'; cr.
 
 BaselineOfGtoolkitCiExperiment loadKnowledge.
