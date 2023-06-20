@@ -2,6 +2,8 @@ Transcript show: 'Loading knowledge database...'; cr.
 
 BaselineOfGtoolkitCiExperiment loadKnowledge.
 
+(Delay forSeconds: 10) wait.
+
 Transcript show: 'Applying knowledge snippets...'; cr.
 
 testPage := (LeDatabasesRegistry defaultLogicalDatabase databaseNamed: 'blueplanelabs/gtoolkit-ci-experiment/lepiter') pages first.
