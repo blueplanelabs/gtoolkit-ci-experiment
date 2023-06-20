@@ -2,8 +2,9 @@ Transcript show: 'Loading knowledge database...'; cr.
 
 BaselineOfGtoolkitCiExperiment loadKnowledge.
 
-LeDatabasesRegistry defaultLogicalDatabase databases do: [ :aDatabase |
-    Transcript show: 'Database: ', aDatabase databaseName; cr. ]
+databaseNames := LeDatabasesRegistry defaultLogicalDatabase databases collect: #databaseName.
+
+Transcript show: 'Databases: ', databaseNames asString; cr.
 
 Transcript show: 'Applying knowledge snippets...'; cr.
 
