@@ -2,7 +2,8 @@ Transcript show: 'Loading knowledge database...'; cr.
 
 BaselineOfGtoolkitCiExperiment loadKnowledge.
 
-(Delay forSeconds: 10) wait.
+LeDatabasesRegistry defaultLogicalDatabase databases do: [ :aDatabase |
+    Transcript show: 'Database: ', aDatabase databaseName; cr. ]
 
 Transcript show: 'Applying knowledge snippets...'; cr.
 
