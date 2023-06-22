@@ -47,7 +47,8 @@ jobs:
       - name: Load knowledge database
         run: |
           sudo apt-get install xvfb
-          xvfb-run --auto-servernum /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_builds/TravisCI.image -- st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
+          xvfb-run --help
+          /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_builds/TravisCI.image -- st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
 
       # Upload the Pharo image artifact
       - name: Upload Pharo image
