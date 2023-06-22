@@ -2,6 +2,8 @@ Transcript show: 'Loading knowledge database...'; cr.
 
 BaselineOfGtoolkitCiExperiment loadKnowledge.
 
+(Delay forSeconds: 10) wait.
+
 databaseNames := LeDatabasesRegistry defaultLogicalDatabase databases collect: #databaseName.
 
 Transcript show: 'Databases: ', databaseNames asString; cr.
