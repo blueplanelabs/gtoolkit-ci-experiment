@@ -4,8 +4,12 @@ IceRepository registry
 		detect: [ :aRepository |
 			aRepository name = 'gtoolkit-ci-experiment' ]
         ifFound: [ :aRepository |
-			| defaultDatabase currentProperties |
-			Transcript show: 'path ->', (aRepository repositoryDirectory / 'lepiter') asString; cr. ]
+			| defaultDatabase currentProperties propertiesFile |
+			Transcript show: 'path ->', (aRepository repositoryDirectory / 'lepiter') asString; cr.
+            defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
+			currentProperties := defaultDatabase properties.
+            propertiesFile := currentProperties localFile.
+            Transcript show: 'defaultDatabase properties ', propertiesFile path asString, 'exists?:', propertiesFile asFileReference exists, 'writable?:', propertiesFile asFileReference isWritable; cr. ]
         ifNone: [
 			Transcript show: 'Repository gtoolkit-ci-experiment not found.'; cr. ].
 
