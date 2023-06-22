@@ -26,6 +26,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+              with:
+                  # Required to enable the registerInIceberg option.
+                  # We need to fetch all of the commits because Iceberg always creates a full history.
+                  fetch-depth: 0
       
       # Setup SmalltalkCI
       - uses: hpi-swa/setup-smalltalkCI@v1
