@@ -24,7 +24,7 @@ Transcript show: 'Databases: ', databaseNames asString; cr.
 
 Transcript show: 'Applying knowledge snippets...'; cr.
 
-testPage := (LeDatabasesRegistry defaultLogicalDatabase databaseNamed: 'blueplanelabs/gtoolkit-ci-experiment/lepiter') pages first.
+testPage := (LeDatabasesRegistry defaultLogicalDatabase databaseNamed: 'gtoolkit-ci-experiment/gtoolkit-ci-experiment/lepiter') pages first.
 
 Transcript show: 'Found Test Page'; cr.
 
