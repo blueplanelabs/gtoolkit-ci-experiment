@@ -1,20 +1,8 @@
-Transcript show: 'Loading knowledge database...'; cr.
+Transcript show: 'Forcing reload of the default logical database...'; cr.
 
 LeDatabasesRegistry default defaultLogicalDatabase reload.
 
-IceRepository registry
-		detect: [ :aRepository |
-			aRepository name = 'gtoolkit-ci-experiment' ]
-        ifFound: [ :aRepository |
-			| defaultDatabase currentProperties propertiesFile |
-			Transcript show: 'path ->', (aRepository repositoryDirectory / 'lepiter') asString; cr.
-            defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
-			currentProperties := defaultDatabase properties.
-            propertiesFile := currentProperties localFile asFileReference.
-            Transcript show: 'DefaultDatabase properties: ', propertiesFile asString, ' Exists?:', propertiesFile exists asString, ' isWritable?:', propertiesFile isWritable asString; cr. ]
-        ifNone: [
-			Transcript show: 'Repository gtoolkit-ci-experiment not found.'; cr. ].
-
+Transcript show: 'Loading knowledge database...'; cr.
 
 BaselineOfGtoolkitCiExperiment loadKnowledge.
 
