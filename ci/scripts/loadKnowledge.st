@@ -1,5 +1,7 @@
 Transcript show: 'Loading knowledge database...'; cr.
 
+LeDatabasesRegistry default defaultLogicalDatabase reload.
+
 IceRepository registry
 		detect: [ :aRepository |
 			aRepository name = 'gtoolkit-ci-experiment' ]
