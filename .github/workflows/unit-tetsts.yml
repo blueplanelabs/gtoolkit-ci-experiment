@@ -47,7 +47,7 @@ jobs:
       - name: Load knowledge database
         run: |
           export DISPLAY=:99
-          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 2>&1 &
           /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_builds/TravisCI.image -- st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
 
       # Upload the Pharo image artifact
