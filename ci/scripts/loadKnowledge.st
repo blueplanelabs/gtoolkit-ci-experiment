@@ -1,8 +1,17 @@
 Transcript show: 'Loading knowledge database...'; cr.
 
-BaselineOfGtoolkitCiExperiment loadKnowledge.
+IceRepository registry
+		detect: [ :aRepository |
+			aRepository name = 'gtoolkit-ci-experiment' ]
+        ifFound: [ :aRepository |
+			| defaultDatabase currentProperties |
+			Transcript show: 'path ->', (aRepository repositoryDirectory / 'lepiter') asString.
+			 ]
+		ifNone: [
+			self inform: 'Repository gtoolkit-ci-experiment not found.' ]
 
-(Delay forSeconds: 10) wait.
+
+BaselineOfGtoolkitCiExperiment loadKnowledge.
 
 databaseNames := LeDatabasesRegistry defaultLogicalDatabase databases collect: #databaseName.
 
