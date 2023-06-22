@@ -9,7 +9,7 @@ IceRepository registry
             defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
 			currentProperties := defaultDatabase properties.
             propertiesFile := currentProperties localFile.
-            Transcript show: 'DefaultDatabase properties: ', propertiesFile path asString, 'exists?:', propertiesFile asFileReference exists asString, 'writable?:', propertiesFile asFileReference isWritable asString; cr. ].
+            Transcript show: 'DefaultDatabase properties: ', propertiesFile path asString, 'exists?:', propertiesFile asFileReference exists asString, 'writable?:', propertiesFile asFileReference isWritable asString; cr.
             Transcript show: 'Exists ', (aRepository repositoryDirectory / 'pharo-local' / 'lepiter' / 'logical-database.properties') asFileReference exists asString; cr. ].
         ifNone: [
 			Transcript show: 'Repository gtoolkit-ci-experiment not found.'; cr. ].
