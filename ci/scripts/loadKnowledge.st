@@ -7,7 +7,7 @@ IceRepository registry
 			| defaultDatabase currentProperties |
 			Transcript show: 'path ->', (aRepository repositoryDirectory / 'lepiter') asString; cr. ]
         ifNone: [
-			self inform: 'Repository gtoolkit-ci-experiment not found.' ].
+			Transcript show: 'Repository gtoolkit-ci-experiment not found.'; cr. ].
 
 
 BaselineOfGtoolkitCiExperiment loadKnowledge.
