@@ -49,7 +49,7 @@ jobs:
           echo "WINIT_UNIX_BACKEND: ${WINIT_UNIX_BACKEND}"
           export RUST_BACKTRACE=full
           export WINIT_UNIX_BACKEND=x11
-          /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --worker no --interactive /home/runner/.smalltalkCI/_builds/TravisCI.image -- st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
+          xvfb-run --auto-servernum /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --worker no --interactive /home/runner/.smalltalkCI/_builds/TravisCI.image -- st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
 
       # Upload the Pharo image artifact
       - name: Upload Pharo image
