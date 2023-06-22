@@ -5,10 +5,9 @@ IceRepository registry
 			aRepository name = 'gtoolkit-ci-experiment' ]
         ifFound: [ :aRepository |
 			| defaultDatabase currentProperties |
-			Transcript show: 'path ->', (aRepository repositoryDirectory / 'lepiter') asString.
-			 ]
-		ifNone: [
-			self inform: 'Repository gtoolkit-ci-experiment not found.' ]
+			Transcript show: 'path ->', (aRepository repositoryDirectory / 'lepiter') asString; cr. ]
+        ifNone: [
+			self inform: 'Repository gtoolkit-ci-experiment not found.' ].
 
 
 BaselineOfGtoolkitCiExperiment loadKnowledge.
