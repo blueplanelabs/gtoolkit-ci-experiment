@@ -8,7 +8,7 @@ IceRepository registry
 			Transcript show: 'path ->', (aRepository repositoryDirectory / 'lepiter') asString; cr.
             defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
 			currentProperties := defaultDatabase properties.
-            propertiesFile := currentProperties asFileReference.
+            propertiesFile := currentProperties localFile asFileReference.
             Transcript show: 'DefaultDatabase properties: ', propertiesFile asString, '. Exists?:', propertiesFile exists asString, '. isWritable?:', propertiesFile isWritable asString; cr. ]
         ifNone: [
 			Transcript show: 'Repository gtoolkit-ci-experiment not found.'; cr. ].
