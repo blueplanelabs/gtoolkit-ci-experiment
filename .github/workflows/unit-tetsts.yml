@@ -46,6 +46,7 @@ jobs:
       # Load knowledge database
       - name: Load knowledge database
         run: |
+          echo "WINIT_UNIX_BACKEND: ${WINIT_UNIX_BACKEND}"
           export RUST_BACKTRACE=full
           /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --worker no --interactive /home/runner/.smalltalkCI/_builds/TravisCI.image -- st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
 
