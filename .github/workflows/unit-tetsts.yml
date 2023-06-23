@@ -48,7 +48,7 @@ jobs:
         run: |
           lsb_release -a
           xvfb-run -a firefox -v
-          xvfb-run -a /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_builds/TravisCI.image -- help
+          xvfb-run -a "/home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_builds/TravisCI.image -- help"
           echo "Trying xvfb-run:"
           xvfb-run -a /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_builds/TravisCI.image -- st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
 
