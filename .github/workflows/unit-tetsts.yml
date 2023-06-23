@@ -48,8 +48,8 @@ jobs:
         run: |
           echo "Downloading GlamorousToolkit:"
           curl --fail --silent --show-error --location --retry 3 --retry-delay 5 --max-time 300 -o /home/runner/.smalltalkCI/_cache/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip https://github.com/feenkcom/gtoolkit/releases/download/v0.8.2944/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip
-          unzip /home/runner/.smalltalkCI/_cache/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip -d  /home/runner/.smalltalkCI/_builds
-          xvfb-run -a /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_builds/GlamorousToolkit.image st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
+          unzip /home/runner/.smalltalkCI/_cache/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip -d  /home/runner/.smalltalkCI/_cache
+          xvfb-run -a /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
 
       # Upload the Pharo image artifact
       - name: Upload Pharo image
