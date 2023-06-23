@@ -1,3 +1,8 @@
+Metacello new
+	repository: 'github://blueplanelabs/gtoolkit-ci-experiment:main/src';
+	baseline: 'GtoolkitCiExperiment';
+	load.
+
 Transcript show: 'Forcing reload of the default logical database...'; cr.
 
 LeDatabasesRegistry default defaultLogicalDatabase reload.
