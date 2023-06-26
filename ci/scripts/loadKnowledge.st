@@ -23,18 +23,18 @@ Transcript show: 'Databases: ', databaseNames asString; cr.
 
 Transcript show: 'Applying knowledge snippets...'; cr.
 
-testPage := (LeDatabasesRegistry defaultLogicalDatabase databaseNamed: 'gtoolkit-ci-experiment/gtoolkit-ci-experiment/lepiter') pages first.
+#testPage := (LeDatabasesRegistry defaultLogicalDatabase databaseNamed: 'gtoolkit-ci-experiment/gtoolkit-ci-experiment/lepiter') pages first.
 
-Transcript show: 'Found Test Page'; cr.
+#Transcript show: 'Found Test Page'; cr.
 
-snippets := testPage allChildrenSnippetsMatching: [ :aSnippet |
-    aSnippet isKindOf: LePharoSnippet].
+#snippets := testPage allChildrenSnippetsMatching: [ :aSnippet |
+#    aSnippet isKindOf: LePharoSnippet].
 
-Transcript show: 'Found ', (snippets size) asString , ' Pharo snippets to be applied.'; cr.
+#Transcript show: 'Found ', (snippets size) asString , ' Pharo snippets to be applied.'; cr.
 
-snippets do: [ :aSnippet |
-    aSnippet coder doItAll ].
+#snippets do: [ :aSnippet |
+#    aSnippet coder doItAll ].
 
-Transcript show: 'Exists LepiterDefinedClass? ', (Smalltalk at: #LepiterDefinedClass) isNotNil asString; cr.
+#Transcript show: 'Exists LepiterDefinedClass? ', (Smalltalk at: #LepiterDefinedClass) isNotNil asString; cr.
 
 Smalltalk snapshot: true andQuit: false.
