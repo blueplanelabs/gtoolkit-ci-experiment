@@ -62,7 +62,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: PharoCIExperiment.image
-          path: /home/runner/.smalltalkCI/_cacge/GlamorousToolkit.image
+          path: /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image
           retention-days: 14 days
      
       # Upload coverage data
