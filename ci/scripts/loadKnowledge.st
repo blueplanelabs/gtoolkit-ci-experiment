@@ -1,7 +1,13 @@
+EpMonitor current disable.
 Metacello new
 	repository: 'github://blueplanelabs/gtoolkit-ci-experiment:main/src';
 	baseline: 'GtoolkitCiExperiment';
 	load.
+EpMonitor current enable.
+
+spartaBuilders := BlSpartaCanvasBuilder allSubclasses.
+
+Transcript show: 'Sparta Builders: ', spartaBuilders asString; cr.
 
 Transcript show: 'Forcing reload of the default logical database...'; cr.
 
@@ -30,3 +36,5 @@ snippets do: [ :aSnippet |
     aSnippet coder doItAll ].
 
 Transcript show: 'Exists LepiterDefinedClass? ', (Smalltalk at: #LepiterDefinedClass) isNotNil asString; cr.
+
+Smalltalk snapshot: true andQuit: false.

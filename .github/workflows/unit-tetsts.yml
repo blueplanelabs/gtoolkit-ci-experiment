@@ -46,10 +46,13 @@ jobs:
       # Load knowledge database
       - name: Load knowledge database
         run: |
-          echo "Downloading GlamorousToolkit:"
+          echo "Downloading Glamorous Toolkit:"
           curl --fail --silent --show-error --location --retry 3 --retry-delay 5 --max-time 300 -o /home/runner/.smalltalkCI/_cache/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip https://github.com/feenkcom/gtoolkit/releases/download/v0.8.2944/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip
+          echo "Inflating Glamorous Toolkit:"
           unzip /home/runner/.smalltalkCI/_cache/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip -d  /home/runner/.smalltalkCI/_cache
-          xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
+          export DISPLAY=:99.0
+          xdpyinfo -display $DISPLAY > /dev/null || Xvfb $DISPLAY -screen 0 1024x768x16 & /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
+          #xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
 
       # Upload the Pharo image artifact
       - name: Upload Pharo image
