@@ -25,14 +25,16 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
           # Required to enable the registerInIceberg option.
           # We need to fetch all of the commits because Iceberg always creates a full history.
           fetch-depth: 0
       
       # Setup SmalltalkCI
-      - uses: hpi-swa/setup-smalltalkCI@v1
+      - name: Setup SmalltalkCI
+        uses: hpi-swa/setup-smalltalkCI@v1
         with:
           smalltalk-image: ${{ matrix.smalltalk }}
           
@@ -62,6 +64,12 @@ jobs:
         run:  |
             /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image examples --junit-xml-output --fail-on-failure LepiterDefinitions
             mv ${{ github.workspace }}/progress-examples.log ${{ github.workspace }}/*-Examples.xml /home/runner/.smalltalkCI/_cache/
+
+      # Export knowledge base
+      - name: Export knowledge base
+        run: |
+            cp -R /home/runner/.smalltalkCI/_cache/gt-extra/feenkcom /home/runner/.smalltalkCI/_cache/pharo-local/iceberg
+            xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/exportKnowledge.st
 
       # Upload the build artifacts
       - name: Upload build artifacts
