@@ -59,7 +59,9 @@ jobs:
 
       # Run examples
       - name: Run examples
-        run:  /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image examples --junit-xml-output --fail-on-failure LepiterDefinitions
+        run:  |
+            /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image examples --junit-xml-output --fail-on-failure LepiterDefinitions
+            mv ${{ github.workspace }}/progress-examples.log ${{ github.workspace }}/*-Examples.xml /home/runner/.smalltalkCI/_cache/
 
       # Upload the build artifacts
       - name: Upload build artifacts
@@ -71,8 +73,8 @@ jobs:
               /home/runner/.smalltalkCI/_cache/GlamorousToolkit.changes
               /home/runner/.smalltalkCI/_cache/pharo-local/lepiter
               /home/runner/.smalltalkCI/_cache/pharo-local/iceberg/blueplanelabs
-              ${{ github.workspace }}/progress-examples.log
-              ${{ github.workspace }}/*-Examples.xml
+              /home/runner/.smalltalkCI/_cache/progress-examples.log
+              /home/runner/.smalltalkCI/_cache/*-Examples.xml
      
       # Upload coverage data
       - name: Upload coverage reports to Codecov
