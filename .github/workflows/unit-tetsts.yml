@@ -59,7 +59,7 @@ jobs:
 
       # Run examples
       - name: Run examples
-        run:  /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image examples --junit-xml-output LepiterDefinitions
+        run:  /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image examples --junit-xml-output LepiterDefinitions
 
       # Upload the build artifacts
       - name: Upload Pharo image
