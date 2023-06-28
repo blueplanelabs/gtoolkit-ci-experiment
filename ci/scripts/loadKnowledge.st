@@ -3,10 +3,6 @@ Metacello new
 	baseline: 'GtoolkitCiExperiment';
 	load.
 
-spartaBuilders := BlSpartaCanvasBuilder allSubclasses.
-
-NonInteractiveTranscript stdout show: 'Sparta Builders: ', spartaBuilders asString; cr.
-
 NonInteractiveTranscript stdout show: 'Forcing reload of the default logical database...'; cr.
 
 LeDatabasesRegistry default defaultLogicalDatabase reload.
