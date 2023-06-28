@@ -61,12 +61,11 @@ jobs:
       - name: Upload Pharo image
         uses: actions/upload-artifact@v3
         with:
-          name: PharoCIExperiment
+          name: PharoCIExperiment_build-{{ github.run_number }}
           path: |
               /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image
               /home/runner/.smalltalkCI/_cache/GlamorousToolkit.changes
-              /home/runner/.smalltalkCI/_cache/pharo-local/blueplanelabs
-          retention-days: 14 days
+              /home/runner/.smalltalkCI/_cache/pharo-local
      
       # Upload coverage data
       - name: Upload coverage reports to Codecov
