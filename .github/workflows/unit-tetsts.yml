@@ -53,13 +53,13 @@ jobs:
           #sudo apt-get update -y
           sudo apt-get install -y libegl-dev
           #ldd /home/runner/.smalltalkCI/_cache/lib/libSkia.so
-          xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
+          xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
           #export DISPLAY=:99.0
           #Xvfb $DISPLAY -screen 0 1024x768x16 & /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
 
       # Run examples
       - name: Run examples
-        run:  xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image examples --junit-xml-output LepiterDefinitions
+        run:  /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image examples --junit-xml-output LepiterDefinitions
 
       # Upload the build artifacts
       - name: Upload Pharo image
