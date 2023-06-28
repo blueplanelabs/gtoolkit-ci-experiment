@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Page</title>
+
+    <!-- browser setup -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <!-- page meta information -->
+    <meta name="description" content="This is a testing page in a Lepiter database to try the automatic code generation by a CI workflow.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="gtoolkit book">
+    <meta property="og:title" content="Test Page">
+    <meta property="og:url" content="https://book.gtoolkit.com/index.html">
+    <meta property="og:description" content="This is a testing page in a Lepiter database to try the automatic code generation by a CI workflow.">
+
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="assets/vendor/awesomefonts/css/all.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/v1/src/css/lepiter-common.css">
+    <link rel="stylesheet" href="assets/v1/src/css/lepiter-snippets.css">
+    <link rel="stylesheet" href="assets/v1/src/css/vs.css">
+</head>
+<body>
+
+    <div class="content">
+        <div class="row le-row">
+
+            <!-- side menu with header -->
+
+            <div class="col-lg-3 le-nav-column">
+                <div class="side-menu sticky-top navbar-expand-lg le-nav-scrollable le-nav-container">
+                    <header class="navbar navbar-light bg-white sticky-top px-3 le-nav-footer">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#le-nav-collapsable" arial-controls="le-nav-collapsable" arial-expanded="false" arial-label="Toggle navigation">
+                            <i class="fas fa-bars">
+                            </i>
+                        </button>
+                        <p class="le-logo">
+                            <a class="le-logo-link" href="https://gtoolkit.com" alt="Glamorous Toolkit"><span class="le-logo-g">glamorous</span><span class="le-logo-t">toolkit</span></a> <span class="le-logo-version">v0.8.2944</span>
+                        </p>
+                    </header>
+
+                    <nav id="le-nav-collapsable" class="navbar-collapse collapse le-nav-root">
+
+                        <!-- navigation start -->
+
+                        
+
+                        <!-- navigation end -->
+                    </nav>
+                </div>
+            </div>
+
+            <!-- main content -->
+
+            <div class="col-lg-9 le-main-col">
+                <div class="container min-height py-5 le-main-container">
+                    <main>
+                        <h1 class="le-main-title">Test Page</h1>
+
+                        <!-- page content start -->
+
+                        <div class="snippet textual-snippet text-snippet">  <p>This is a testing page in a Lepiter database to try the automatic code generation by a CI workflow.  </p></div><div class="snippet textual-snippet text-snippet">  <p>The following snippets containing Pharo code should be automatically applied by the building workflow of the project in order to generate a new Smalltalk image containing the corresponding generated code.  </p></div><div class="snippet textual-snippet text-snippet">  <p>For instance, the following snippet will create programatically a new empty Smalltalk class named <code class="class_annotation">LepiterDefinedClass</code> that inherits from <code class="class_annotation">Object</code> in the category <code package="package_annotation">LepiterDefinitions</code>:  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet">  <pre class="no_bottom_margin">Object subclass: #LepiterDefinedClass     instanceVariableNames: ''     classVariableNames: ''     category: 'LepiterDefinitions'  </pre></div><div class="snippet textual-snippet text-snippet">  <p>The following snippet add a simple method to the  previously defined class:  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet">  <pre class="no_bottom_margin">LepiterDefinedClass compile: 'warningColor    ^ Color orange'  </pre></div><div class="snippet textual-snippet text-snippet">  <p>Finally we can define an example to test the expected behaviour:  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet">  <pre class="no_bottom_margin">LepiterDefinedClass compile: 'exampleWarningColor    &lt;gtExample>        |warning|    warning := self warningColor.    self assert: warning equals: Color orange.    ^ warning'  </pre></div><div class="snippet textual-snippet text-snippet">  <p>Ahora podríamos ejecutar el ejemplo que se acaba de crear para comprobar si el funcionamiento es el esperado:  </p></div><div>  <div class="snippet textual-snippet code-snippet pharo-snippet documentWidth">    <pre class="no_bottom_margin">exampleWarningColor    &lt;gtExample>        |warning|    warning := self warningColor.    self assert: warning equals: Color orange.    ^ warning    </pre>  </div>  <figure class="snippet picture-snippet paragraphWidth"><img class="picture-snippet-image" src="gt-figures/1000.png"/>  </figure></div>
+
+                        <!-- page content end -->
+                    </main>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="text-center py-5 le-footer">
+        <p class="le-footer-credits">
+            Powered by <a class="le-footer-link" href="https://lepiter.com">Lepiter</a> | <a class="le-footer-link" href="https://feenk.com/privacy">Privacy Policy</a>
+        </p>
+    </footer>
+
+    <!-- scripts -->
+    <script type="text/javascript" src="assets/vendor/jquery/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/datefns.min.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/highlight.pack.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-common.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-snippets.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-time.js"></script>
+</body>
+</html>
