@@ -91,3 +91,10 @@ jobs:
         uses: codecov/codecov-action@v3
         env: 
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+     # Publishes knowledge base export
+     - name: Publishes knowledge base export
+       uses: peaceiris/actions-gh-pages@v3
+       with:
+           github_token: ${{ secrets.GITHUB_TOKEN }}
+           publish_dir: ./public
