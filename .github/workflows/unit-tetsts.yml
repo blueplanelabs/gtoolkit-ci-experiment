@@ -59,17 +59,20 @@ jobs:
 
       # Run examples
       - name: Run examples
-        run:  /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image examples --junit-xml-output LepiterDefinitions
+        run:  /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image examples --junit-xml-output --fail-on-failure LepiterDefinitions
 
       # Upload the build artifacts
-      - name: Upload Pharo image
+      - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
           name: PharoCIExperiment_build-${{ github.run_number }}
           path: |
               /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image
               /home/runner/.smalltalkCI/_cache/GlamorousToolkit.changes
+              /home/runner/.smalltalkCI/_cache/pharo-local/lepiter
               /home/runner/.smalltalkCI/_cache/pharo-local/iceberg/blueplanelabs
+              /home/runner/.smalltalkCI/_cache/progress-examples.log
+              /home/runner/.smalltalkCI/_cache/*-Examples.xml
      
       # Upload coverage data
       - name: Upload coverage reports to Codecov
