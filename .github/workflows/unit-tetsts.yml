@@ -70,6 +70,7 @@ jobs:
         run: |
             cp -R /home/runner/.smalltalkCI/_cache/gt-extra/feenkcom /home/runner/.smalltalkCI/_cache/pharo-local/iceberg
             xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save  --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/exportKnowledge.st
+            cp -R ${{ github.workspace }}/public /home/runner/.smalltalkCI/_cache
 
       # Upload the build artifacts
       - name: Upload build artifacts
@@ -83,6 +84,7 @@ jobs:
               /home/runner/.smalltalkCI/_cache/pharo-local/iceberg/blueplanelabs
               /home/runner/.smalltalkCI/_cache/progress-examples.log
               /home/runner/.smalltalkCI/_cache/*-Examples.xml
+              /home/runner/.smalltalkCI/_cache/public
      
       # Upload coverage data
       - name: Upload coverage reports to Codecov
