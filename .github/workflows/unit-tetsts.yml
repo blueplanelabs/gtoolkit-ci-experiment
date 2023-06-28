@@ -71,8 +71,8 @@ jobs:
               /home/runner/.smalltalkCI/_cache/GlamorousToolkit.changes
               /home/runner/.smalltalkCI/_cache/pharo-local/lepiter
               /home/runner/.smalltalkCI/_cache/pharo-local/iceberg/blueplanelabs
-              /home/runner/.smalltalkCI/_cache/progress-examples.log
-              /home/runner/.smalltalkCI/_cache/*-Examples.xml
+              progress-examples.log
+              *-Examples.xml
      
       # Upload coverage data
       - name: Upload coverage reports to Codecov
