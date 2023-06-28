@@ -71,8 +71,8 @@ jobs:
               /home/runner/.smalltalkCI/_cache/GlamorousToolkit.changes
               /home/runner/.smalltalkCI/_cache/pharo-local/lepiter
               /home/runner/.smalltalkCI/_cache/pharo-local/iceberg/blueplanelabs
-              ${{ GITHUB_WORKSPACE }}/progress-examples.log
-              ${{ GITHUB_WORKSPACE }}/*-Examples.xml
+              ${{ github.workspace }}/progress-examples.log
+              ${{ github.workspace }}/*-Examples.xml
      
       # Upload coverage data
       - name: Upload coverage reports to Codecov
