@@ -8,7 +8,7 @@ Class {
 BaselineOfGtoolkitCiExperiment class >> loadKnowledge [
 	IceRepository registry  
 		detect: [ :aRepository |
-			aRepository name = 'gtoolkit-ci-experiment' ]
+			aRepository name = 'gtoolkit-lepiter-ci' ]
 		ifFound: [ :aRepository | 
 			| defaultDatabase currentProperties |
 			defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
