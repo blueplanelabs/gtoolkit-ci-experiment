@@ -2,7 +2,7 @@ NonInteractiveTranscript stdout
   show: 'Exporting knowledge base...'; cr.
 
 knowledgeBase := LeDatabasesRegistry defaultLogicalDatabase
-			databaseNamed: 'blueplanelabs/gtoolkit-ci-experiment/lepiter'.
+			databaseNamed: 'blueplanelabs/gtoolkit-lepiter-ci/lepiter'.
 
 NonInteractiveTranscript stdout
   show: 'Knowledge base found: ', knowledgeBase databaseName ; cr.

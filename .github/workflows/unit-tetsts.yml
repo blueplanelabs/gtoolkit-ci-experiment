@@ -55,9 +55,9 @@ jobs:
           #sudo apt-get update -y
           sudo apt-get install -y libegl-dev
           #ldd /home/runner/.smalltalkCI/_cache/lib/libSkia.so
-          xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
+          xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/loadKnowledge.st
           #export DISPLAY=:99.0
-          #Xvfb $DISPLAY -screen 0 1024x768x16 & /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/loadKnowledge.st
+          #Xvfb $DISPLAY -screen 0 1024x768x16 & /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/loadKnowledge.st
 
       # Run examples
       - name: Run examples
@@ -69,7 +69,7 @@ jobs:
       - name: Export knowledge base
         run: |
             cp -R /home/runner/.smalltalkCI/_cache/gt-extra/feenkcom /home/runner/.smalltalkCI/_cache/pharo-local/iceberg
-            xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save  --quit /home/runner/work/gtoolkit-ci-experiment/gtoolkit-ci-experiment/ci/scripts/exportKnowledge.st
+            xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save  --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/exportKnowledge.st
             cp -R ${{ github.workspace }}/public /home/runner/.smalltalkCI/_cache
 
       # Upload the build artifacts

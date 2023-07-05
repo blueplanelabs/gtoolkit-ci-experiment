@@ -1,5 +1,5 @@
 Metacello new
-	repository: 'github://blueplanelabs/gtoolkit-ci-experiment:main/src';
+	repository: 'github://blueplanelabs/gtoolkit-lepiter-ci:main/src';
 	baseline: 'GtoolkitCiExperiment';
 	load.
 
@@ -17,7 +17,7 @@ NonInteractiveTranscript stdout show: 'Databases: ', databaseNames asString; cr.
 
 NonInteractiveTranscript stdout show: 'Applying knowledge snippets...'; cr.
 
-testPage := (LeDatabasesRegistry defaultLogicalDatabase databaseNamed: 'blueplanelabs/gtoolkit-ci-experiment/lepiter') pages first.
+testPage := (LeDatabasesRegistry defaultLogicalDatabase databaseNamed: 'blueplanelabs/gtoolkit-lepiter-ci/lepiter') pages first.
 
 NonInteractiveTranscript stdout show: 'Found Test Page'; cr.
 
