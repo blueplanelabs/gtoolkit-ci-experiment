@@ -76,7 +76,7 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: PharoCIExperiment_build-${{ github.run_number }}
+          name: GT-Lepiter-CI_build-${{ github.run_number }}
           path: |
               /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image
               /home/runner/.smalltalkCI/_cache/GlamorousToolkit.changes
