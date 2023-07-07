@@ -12,11 +12,10 @@ mainPage := knowledgeBase pageNamed: 'Test Page'.
 NonInteractiveTranscript stdout
   show: 'Main page found: ', mainPage title ; cr.
 
-targetDir := '/home/runner/.smalltalkCI/_builds/public' asFileReference.
+targetDir := './public' asFileReference.
 
 NonInteractiveTranscript stdout
   show: 'Exporting to: ', targetDir asPath asString ; cr.
-
 
 LeHtmlBookExporter new
 			database: knowledgeBase;
