@@ -1,7 +1,7 @@
 Class {
 	#name : #Dummy,
 	#superclass : #Object,
-	#category : #GtoolkitCiExperiment
+	#category : #GtoolkitLepiterCI
 }
 
 { #category : #accessing }

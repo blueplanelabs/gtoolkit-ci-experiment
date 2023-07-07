@@ -1,7 +1,7 @@
 Class {
 	#name : #DummyTests,
 	#superclass : #TestCase,
-	#category : #'GtoolkitCiExperiment-Tests'
+	#category : #'GtoolkitLepiterCI-Tests'
 }
 
 { #category : #accessing }
