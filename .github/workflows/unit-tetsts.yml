@@ -74,7 +74,7 @@ jobs:
       - name: Export knowledge base
         run: |
             cp -R /home/runner/.smalltalkCI/_builds/gt-extra/feenkcom /home/runner/.smalltalkCI/_builds/pharo-local/iceberg
-            mkdir /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/public
+            mkdir /home/runner/.smalltalkCI/_builds/public
             xvfb-run -a /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_builds/GlamorousToolkit.image st --save  --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/exportKnowledge.st
             cp -R ${{ github.workspace }}/public /home/runner/.smalltalkCI/_builds
 
