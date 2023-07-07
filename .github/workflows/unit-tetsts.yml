@@ -55,8 +55,8 @@ jobs:
           #sudo apt-get update -y
           sudo apt-get install -y libegl-dev
           #ldd /home/runner/.smalltalkCI/_cache/lib/libSkia.so
-          cp /home/runner/.smalltalkCI/_builds/Travis.image /home/runner/.smalltalkCI/_builds/GlamorousToolkit.image
-          cp /home/runner/.smalltalkCI/_builds/Travis.changes /home/runner/.smalltalkCI/_builds/GlamorousToolkit.changes
+          cp /home/runner/.smalltalkCI/_builds/TravisCI.image /home/runner/.smalltalkCI/_builds/GlamorousToolkit.image
+          cp /home/runner/.smalltalkCI/_builds/TravisCI.changes /home/runner/.smalltalkCI/_builds/GlamorousToolkit.changes
           #xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/loadKnowledge.st
           xvfb-run -a /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_builds/GlamorousToolkit.image st --save --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/loadKnowledge.st
           #export DISPLAY=:99.0
