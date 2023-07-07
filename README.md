@@ -4,7 +4,7 @@
 # GToolkit and Lepiter CI
 
 This repository shows how to configure a CI workflow using GitHub Actions for a software project based on 
-**Moldable Literate Programming** (MLP) with Glamorous Toolkit's Lepiter.
+**Moldable Literate Programming** (MLP) using the Glamorous Toolkit's knowledge management platform, named Lepiter.
 
 ## Installation
 
