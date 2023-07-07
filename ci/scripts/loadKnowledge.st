@@ -1,6 +1,6 @@
 Metacello new
 	repository: 'github://blueplanelabs/gtoolkit-lepiter-ci:main/src';
-	baseline: 'GtoolkitCiExperiment';
+	baseline: 'GtoolkitLepiterCI';
 	load.
 
 NonInteractiveTranscript stdout show: 'Forcing reload of the default logical database...'; cr.
@@ -9,7 +9,7 @@ LeDatabasesRegistry default defaultLogicalDatabase reload.
 
 NonInteractiveTranscript stdout show: 'Loading knowledge database...'; cr.
 
-BaselineOfGtoolkitCiExperiment loadKnowledge.
+BaselineOfGtoolkitLepiterCI loadKnowledge.
 
 databaseNames := LeDatabasesRegistry defaultLogicalDatabase databases collect: #databaseName.
 

@@ -1,7 +1,7 @@
 SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
-      #baseline : 'GtoolkitCiExperiment',
+      #baseline : 'GtoolkitLepiterCI',
       #directory: 'src',
       #platforms : [ #pharo ],
       #registerInIceberg: true
@@ -9,7 +9,7 @@ SmalltalkCISpec {
   ],
   #testing : {
     #coverage : {
-      #packages : [ 'GtoolkitCiExperiment' ],
+      #packages : [ 'GtoolkitLepiterCI' ],
       #format : #lcov
     }
   }
