@@ -1,11 +1,11 @@
 Class {
-	#name : #BaselineOfGtoolkitCiExperiment,
+	#name : #BaselineOfGtoolkitLepiterCI,
 	#superclass : #BaselineOf,
-	#category : #BaselineOfGtoolkitCiExperiment
+	#category : #BaselineOfGtoolkitLepiterCI
 }
 
 { #category : #accessing }
-BaselineOfGtoolkitCiExperiment class >> loadKnowledge [
+BaselineOfGtoolkitLepiterCI class >> loadKnowledge [
 	IceRepository registry  
 		detect: [ :aRepository |
 			aRepository name = 'gtoolkit-lepiter-ci' ]
@@ -20,14 +20,14 @@ BaselineOfGtoolkitCiExperiment class >> loadKnowledge [
 ]
 
 { #category : #baseline }
-BaselineOfGtoolkitCiExperiment >> baseline: spec [
+BaselineOfGtoolkitLepiterCI >> baseline: spec [
 	<baseline>
 		^ spec for: #common do: [
-			spec package: 'GtoolkitCiExperiment';
-				 package: 'GtoolkitCiExperiment-Tests'.
+			spec package: 'GtoolkitLepiterCI';
+				 package: 'GtoolkitLepiterCI-Tests'.
 			spec 
-			    group: 'Core' with: #('GtoolkitCiExperiment');
-			    group: 'Tests' with: #('GtoolkitCiExperiment-Tests');
+			    group: 'Core' with: #('GtoolkitLepiterCI');
+			    group: 'Tests' with: #('GtoolkitLepiterCI-Tests');
 			    group: 'default' with: #('Core' 'Tests') ]
 		
 ]
