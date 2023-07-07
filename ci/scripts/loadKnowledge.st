@@ -12,7 +12,7 @@ NonInteractiveTranscript stdout show: 'Databases: ', databaseNames asString; cr.
 
 NonInteractiveTranscript stdout show: 'Applying knowledge snippets...'; cr.
 
-testPage := (LeDatabasesRegistry defaultLogicalDatabase databaseNamed: 'blueplanelabs/gtoolkit-lepiter-ci/lepiter') pages first.
+testPage := (LeDatabasesRegistry defaultLogicalDatabase databaseNamed: 'gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/lepiter') pages first.
 
 NonInteractiveTranscript stdout show: 'Found Test Page'; cr.
 
