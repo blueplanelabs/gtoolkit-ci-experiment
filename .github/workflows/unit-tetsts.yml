@@ -48,29 +48,34 @@ jobs:
       # Load knowledge database
       - name: Load knowledge database
         run: |
-          echo "Downloading Glamorous Toolkit:"
-          curl --fail --silent --show-error --location --retry 3 --retry-delay 5 --max-time 300 -o /home/runner/.smalltalkCI/_cache/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip https://github.com/feenkcom/gtoolkit/releases/download/v0.8.2944/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip
-          echo "Inflating Glamorous Toolkit:"
-          unzip /home/runner/.smalltalkCI/_cache/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip -d  /home/runner/.smalltalkCI/_cache
+          #echo "Downloading Glamorous Toolkit:"
+          #curl --fail --silent --show-error --location --retry 3 --retry-delay 5 --max-time 300 -o /home/runner/.smalltalkCI/_cache/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip https://github.com/feenkcom/gtoolkit/releases/download/v0.8.2944/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip
+          #echo "Inflating Glamorous Toolkit:"
+          #unzip /home/runner/.smalltalkCI/_cache/GlamorousToolkit-Linux-x86_64-v0.8.2944.zip -d  /home/runner/.smalltalkCI/_cache
           #sudo apt-get update -y
           sudo apt-get install -y libegl-dev
           #ldd /home/runner/.smalltalkCI/_cache/lib/libSkia.so
-          xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/loadKnowledge.st
+          cp /home/runner/.smalltalkCI/_builds/Travis.image /home/runner/.smalltalkCI/_builds/GlamorousToolkit.image
+          cp /home/runner/.smalltalkCI/_builds/Travis.changes /home/runner/.smalltalkCI/_builds/GlamorousToolkit.changes
+          #xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/loadKnowledge.st
+          xvfb-run -a /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_builds/GlamorousToolkit.image st --save --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/loadKnowledge.st
           #export DISPLAY=:99.0
           #Xvfb $DISPLAY -screen 0 1024x768x16 & /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/loadKnowledge.st
 
       # Run examples
       - name: Run examples
         run:  |
-            /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image examples --junit-xml-output --fail-on-failure LepiterDefinitions
-            mv ${{ github.workspace }}/progress-examples.log ${{ github.workspace }}/*-Examples.xml /home/runner/.smalltalkCI/_cache/
+            #/home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image examples --junit-xml-output --fail-on-failure LepiterDefinitions
+            /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli /home/runner/.smalltalkCI/_builds/GlamorousToolkit.image examples --junit-xml-output --fail-on-failure LepiterDefinitions
+            #mv ${{ github.workspace }}/progress-examples.log ${{ github.workspace }}/*-Examples.xml /home/runner/.smalltalkCI/_cache/
+            mv ${{ github.workspace }}/progress-examples.log ${{ github.workspace }}/*-Examples.xml /home/runner/.smalltalkCI/_builds/
 
       # Export knowledge base
       - name: Export knowledge base
         run: |
-            cp -R /home/runner/.smalltalkCI/_cache/gt-extra/feenkcom /home/runner/.smalltalkCI/_cache/pharo-local/iceberg
-            xvfb-run -a /home/runner/.smalltalkCI/_cache/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image st --save  --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/exportKnowledge.st
-            cp -R ${{ github.workspace }}/public /home/runner/.smalltalkCI/_cache
+            cp -R /home/runner/.smalltalkCI/_builds/gt-extra/feenkcom /home/runner/.smalltalkCI/_builds/pharo-local/iceberg
+            xvfb-run -a /home/runner/.smalltalkCI/_builds/bin/GlamorousToolkit-cli --interactive /home/runner/.smalltalkCI/_builds/GlamorousToolkit.image st --save  --quit /home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/ci/scripts/exportKnowledge.st
+            cp -R ${{ github.workspace }}/public /home/runner/.smalltalkCI/_builds
 
       # Upload the build artifacts
       - name: Upload build artifacts
@@ -78,13 +83,13 @@ jobs:
         with:
           name: GT-Lepiter-CI_build-${{ github.run_number }}
           path: |
-              /home/runner/.smalltalkCI/_cache/GlamorousToolkit.image
-              /home/runner/.smalltalkCI/_cache/GlamorousToolkit.changes
-              /home/runner/.smalltalkCI/_cache/pharo-local/lepiter
-              /home/runner/.smalltalkCI/_cache/pharo-local/iceberg/blueplanelabs
-              /home/runner/.smalltalkCI/_cache/progress-examples.log
-              /home/runner/.smalltalkCI/_cache/*-Examples.xml
-              /home/runner/.smalltalkCI/_cache/public
+              /home/runner/.smalltalkCI/_builds/GlamorousToolkit.image
+              /home/runner/.smalltalkCI/_builds/GlamorousToolkit.changes
+              /home/runner/.smalltalkCI/_builds/pharo-local/lepiter
+              /home/runner/.smalltalkCI/_builds/pharo-local/iceberg/blueplanelabs
+              /home/runner/.smalltalkCI/_builds/progress-examples.log
+              /home/runner/.smalltalkCI/_builds/*-Examples.xml
+              /home/runner/.smalltalkCI/_builds/public
      
       # Upload coverage data
       - name: Upload coverage reports to Codecov
