@@ -12,7 +12,7 @@ mainPage := knowledgeBase pageNamed: 'Test Page'.
 NonInteractiveTranscript stdout
   show: 'Main page found: ', mainPage title ; cr.
 
-targetDir := './public' asFileReference.
+targetDir := '/home/runner/work/gtoolkit-lepiter-ci/gtoolkit-lepiter-ci/public' asFileReference.
 
 NonInteractiveTranscript stdout
   show: 'Exporting to: ', targetDir asPath asString ; cr.
