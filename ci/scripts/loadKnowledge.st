@@ -1,7 +1,7 @@
-Metacello new
+"Metacello new
 	repository: 'github://blueplanelabs/gtoolkit-lepiter-ci:main/src';
 	baseline: 'GtoolkitLepiterCI';
-	load.
+	load.""
 
 NonInteractiveTranscript stdout show: 'Forcing reload of the default logical database...'; cr.
 
